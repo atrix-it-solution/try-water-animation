@@ -1,0 +1,157 @@
+/* ========================================================
+   WEBFLOW BASE / UTILITY CLASSES (Extracted from your code)
+   ======================================================== */
+
+a {
+  background-color: #0000;
+  text-decoration: none;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+.w-inline-block {
+  max-width: 100%;
+  display: inline-block;
+}
+.w-embed:before,
+.w-embed:after {
+  content: " ";
+  grid-area: 1/1/2/2;
+  display: table;
+}
+.w-embed:after {
+  clear: both;
+}
+
+/* Base button styles applied to Webflow buttons */
+.button,
+.w-button {
+  color: #fff;
+  line-height: inherit;
+  cursor: pointer;
+  background-color: #3898ec;
+  border: 0;
+  border-radius: 0;
+  padding: 9px 15px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+/* ========================================================
+   CUSTOM NAVBAR CLASSES (Skeleton - Add your specific styles here)
+   ======================================================== */
+
+/* Main Navbar wrapper */
+.navbar {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+  /* Add your background, padding, height etc. */
+}
+
+/* Flex Container inside navbar */
+.nav_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+/* Logo container */
+.nav_logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo_img {
+  width: 104px; /* Set as per your original SVG design */
+  height: auto;
+}
+
+/* Navigation Links Wrapper */
+.nav_links {
+  display: flex;
+  align-items: center;
+}
+
+.nav_links-content {
+  display: flex;
+  gap: 20px; /* Space between links */
+  align-items: center;
+}
+
+/* Individual links */
+.navlink {
+  color: #15171A;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navlink:hover {
+  color: #08906C;
+}
+
+/* Button wrappers inside nav */
+.nav_links-button,
+.button_navbar.btn-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Mobile Menu Button (Hamburger) */
+.menu-button {
+  display: none; /* Hidden on desktop by default */
+  cursor: pointer;
+}
+
+.burger_icon {
+  width: 36px;
+  height: 36px;
+}
+
+/* Hide specific icons based on state */
+.burger_icon.is--close {
+  display: none;
+}
+
+.nav_bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ffffff;
+  z-index: -1;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 991px) {
+  .nav_links {
+    display: none; /* Initially hide on mobile, handled by your JS */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .nav_links-content {
+    flex-direction: column;
+  }
+  
+  .menu-button {
+    display: block; /* Show hamburger on mobile */
+  }
+  
+  .button_navbar.btn-bar {
+    display: none; /* Usually hidden on mobile if moved inside nav_links */
+  }
+}
