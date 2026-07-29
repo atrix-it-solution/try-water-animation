@@ -11,8 +11,8 @@ const Navbar = () => {
       data-collapse="medium"
       data-w-id="a7bc8a10-fdd2-7358-97a0-ee55c54de030"
       role="banner"
-      data-duration="400"
-    >
+      data-duration="400">
+
       <div className="w-layout-vflex nav_container">
         <a href="/" aria-current="page" className="nav_logo w-inline-block w--current">
           <div className="logo_img is--desk w-embed">
