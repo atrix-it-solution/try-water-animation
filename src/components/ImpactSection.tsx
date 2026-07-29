@@ -1,65 +1,77 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./ImpactSection.css"; // CSS check kar lena
+import "./ImpactSection.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ImpactSection() {
   const mainRef = useRef<HTMLDivElement | null>(null);
 
-useEffect(() => {
-  let ctx = gsap.context(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: mainRef.current,
-        start: "top top",
-        end: "+=1100", 
-        scrub: 0.5,       
-        pin: true,
-        anticipatePin: 1,
-        onUpdate: (self) => {
-          if (self.progress > 0.03) {
-            gsap.set(".circle-card", { pointerEvents: "none" });
-          } else {
-            gsap.set(".circle-card", { pointerEvents: "auto" });
-          }
-        }
-      },
-    });
+  useEffect(() => {
+    // GSAP Context ensures complete cleanup on unmount/re-render
+    let ctx = gsap.context(() => {
+      let mm = gsap.matchMedia();
 
-    tl.to(".card-inner", { opacity: 0, duration: 0.5 }, 0);
+      // Tablet & Desktop screen (768px and above) - Scroll Animation Enabled
+      mm.add("(min-width: 768px)", () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: mainRef.current,
+            start: "top top",
+            end: "+=1100",
+            scrub: 0.5,
+            pin: true,
+            anticipatePin: 1,
+            onUpdate: (self) => {
+              if (self.progress > 0.03) {
+                gsap.set(".circle-card", { pointerEvents: "none" });
+              } else {
+                gsap.set(".circle-card", { pointerEvents: "auto" });
+              }
+            },
+          },
+        });
 
-    tl.to(".is--01", { xPercent: 50, yPercent: 50, duration: 1, ease: "power2.inOut" }, 0)
-      .to(".is--02", { xPercent: -50, yPercent: 50, duration: 1, ease: "power2.inOut" }, 0)
-      .to(".is--03", { xPercent: 50, yPercent: -50, duration: 1, ease: "power2.inOut" }, 0)
-      .to(".is--04", { xPercent: -50, yPercent: -50, duration: 1, ease: "power2.inOut" }, 0);
+        tl.to(".card-inner", { opacity: 0, duration: 0.5 }, 0);
 
-    tl.to(".green-circle", { 
-      scale: 0.75, 
-      duration: 1.5, 
-      ease: "power2.inOut" 
-    }, 0.8);
+        tl.to(".is--01", { xPercent: 50, yPercent: 50, duration: 1, ease: "power2.inOut" }, 0)
+          .to(".is--02", { xPercent: -50, yPercent: 50, duration: 1, ease: "power2.inOut" }, 0)
+          .to(".is--03", { xPercent: 50, yPercent: -50, duration: 1, ease: "power2.inOut" }, 0)
+          .to(".is--04", { xPercent: -50, yPercent: -50, duration: 1, ease: "power2.inOut" }, 0);
 
-    tl.to(".circle-card", { opacity: 0, duration: 0.1 }, 1.5);
+        tl.to(
+          ".green-circle",
+          {
+            scale: 0.75,
+            duration: 1.5,
+            ease: "power2.inOut",
+          },
+          0.8
+        );
 
-    tl.to(".accent-text", { 
-      opacity: 1, 
-      y: 0, 
-      duration: 0.6, 
-      ease: "power2.out" 
-    }, 1.7);
+        tl.to(".circle-card", { opacity: 0, duration: 0.1 }, 1.5);
 
-  }, mainRef);
+        tl.to(
+          ".accent-text",
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power2.out",
+          },
+          1.7
+        );
+      });
+    }, mainRef);
 
-  return () => ctx.revert();
-}, []);
+    return () => ctx.revert(); // Completely reverts GSAP changes so page layout stays intact
+  }, []);
 
   return (
     <div ref={mainRef} className="impact-section-wrapper">
       <section className="impact-section">
         <div className="impact-container">
-          
           {/* Left Side: Text */}
           <div className="impact-left">
             <div className="section_chips">
@@ -76,7 +88,6 @@ useEffect(() => {
 
           {/* Right Side: Stage Container */}
           <div className="impact-stage">
-            
             <div className="circle-card is--01">
               <div className="card-inner">
                 <div className="num">60+</div>
@@ -114,7 +125,6 @@ useEffect(() => {
                 starting fresh.
               </p>
             </div>
-
           </div>
         </div>
       </section>

@@ -1,7 +1,6 @@
-
+import React from "react";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import React, { useEffect, useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 import ImpactSection from "./components/ImpactSection";
 import Navbar from './components/Navbar';
@@ -17,10 +16,6 @@ declare global {
 
 export const App: React.FC = () => {
  
-
-
-
-
   return (
     <div className="page_wrapp">
 

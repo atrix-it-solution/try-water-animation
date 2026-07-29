@@ -1,4 +1,5 @@
-import React from 'react';
+
+import logo from "../../public/images/logo.png"
 
 const Navbar = () => {
   return (
@@ -15,7 +16,8 @@ const Navbar = () => {
 
       <div className="w-layout-vflex nav_container">
         <a href="/" aria-current="page" className="nav_logo w-inline-block w--current">
-          <div className="logo_img is--desk w-embed">
+            <img src={logo} alt="" />
+          {/* <div className="logo_img is--desk w-embed">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="100%"
@@ -59,7 +61,7 @@ const Navbar = () => {
                 fill="#08906C"
               />
             </svg>
-          </div>
+          </div> */}
         </a>
         <nav
           role="navigation"

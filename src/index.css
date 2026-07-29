@@ -6400,8 +6400,8 @@ figure {
   color: var(--_zig---colors--white);
   background-image:
     url(../images/6a3123eb95aa46fdfd7fc0b8_Vector.svg),
-    radial-gradient(circle, #0000, #00000080),
-    linear-gradient(248deg, #064c39 16%, #1a75f4);
+  radial-gradient(circle, #164d9c72,#1e1b4b), 
+  linear-gradient(248deg, #1e1b4b 16%, #1a75f4e9);
   background-position:
     50%,
     0 0,
@@ -6413,8 +6413,8 @@ figure {
   padding-bottom: var(--_zig---base-size--40);
 }
 .footer-top {
-  padding-top: 11.25rem;
-  padding-bottom: 11.25rem;
+  padding-top: 5.25rem;
+  padding-bottom: 2.25rem;
 }
 .flex-block-24 {
   grid-column-gap: var(--_zig---base-size--40);
@@ -11048,7 +11048,7 @@ figure {
   }
   .footer-top {
     padding-top: 6.875rem;
-    padding-bottom: 6.875rem;
+    /* padding-bottom: 4.875rem; */
   }
   .flex-block-25 {
     max-width: 18rem;
@@ -11462,4 +11462,24 @@ figure {
   #w-node-dfeb8a6f-3d27-8a65-53e0-41b22315649d-23156472 {
     grid-area: span 1 / span 1 / span 1 / span 1;
   }
+}
+
+
+
+a.nav_logo.w-inline-block.w--current {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #1a75f4;
+    /* font-size: 48px !important; */
+}
+
+a.nav_logo.w-inline-block.w--current h3{
+  font-size: 38px;
+}
+
+.footer_logo img{
+    background: white;
+    padding: 5%;
 }
