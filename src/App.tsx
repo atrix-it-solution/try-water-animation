@@ -4,8 +4,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import ImpactSection from "./components/ImpactSection";
 import Navbar from './components/Navbar';
-import Herosec from './components/Herosec';
 import Footer from './components/Footer';
+import { NanoBubbleSection } from "./components/NanoBubbleSectiondone";
+import { SalesSection } from "./components/SalesSection";
+import { ScrollVideoSection } from "./components/ScrollVideoSection";
+import HeroAnimation from "./components/HeroAnimation";
+import HeroVideo from "./components/HeroVideo";
 
 declare global {
   interface Window {
@@ -50,17 +54,24 @@ export const App: React.FC = () => {
           </div>
         </div>
       </div> */}
-
+       <Navbar/>
+      <HeroVideo/>
+      {/* <HeroAnimation/> */}
       {/* Navbar */}
-      <Navbar/>
+     
 
       {/* Main */}
       <main className="main_wrapp"> 
         {/* Hero Section */}
-         <Herosec/>
+         {/* <Herosec/> */}
 
         {/* Impact Section */}
          <ImpactSection />
+         <ScrollVideoSection/>
+
+         {/* <NanoBubbleSection/> */}
+
+  <SalesSection/>
       
       
         {/* Footer Section */}

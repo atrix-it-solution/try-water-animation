@@ -5232,7 +5232,7 @@
           function pointEqual(t, e) {
             return floatEqual(t[0], e[0]) && floatEqual(t[1], e[1]);
           }
-          function ZigZagModifier() {}
+          function RYVRZagModifier() {}
           function setPoint(t, e, i, s, r, a, n) {
             var o = i - Math.PI / 2,
               h = i + Math.PI / 2,
@@ -5262,7 +5262,7 @@
               r = getPerpendicularVector(t.v[i], t.v[s]);
             return Math.atan2(0, 1) - Math.atan2(r[1], r[0]);
           }
-          function zigZagCorner(t, e, i, s, r, a, n) {
+          function RYVRZagCorner(t, e, i, s, r, a, n) {
             var o = getProjectingAngle(e, i),
               h = e.v[i % e._length],
               l = e.v[0 === i ? e._length - 1 : i - 1],
@@ -5290,7 +5290,7 @@
               a,
             );
           }
-          function zigZagSegment(t, e, i, s, r, a) {
+          function RYVRZagSegment(t, e, i, s, r, a) {
             for (var n = 0; n < s; n += 1) {
               var o = (n + 1) / (s + 1),
                 h =
@@ -5952,8 +5952,8 @@
               var i = (e + 1) % t.length();
               return new PolynomialBezier(t.v[i], t.i[i], t.o[e], t.v[e], !0);
             }),
-            extendPrototype([ShapeModifier], ZigZagModifier),
-            (ZigZagModifier.prototype.initModifierProperties = function (t, e) {
+            extendPrototype([ShapeModifier], RYVRZagModifier),
+            (RYVRZagModifier.prototype.initModifierProperties = function (t, e) {
               ((this.getValue = this.processKeys),
                 (this.amplitude = PropertyFactory.getProp(
                   t,
@@ -5981,23 +5981,23 @@
                   0 !== this.frequency.effectsSequence.length ||
                   0 !== this.pointsType.effectsSequence.length));
             }),
-            (ZigZagModifier.prototype.processPath = function (t, e, i, s) {
+            (RYVRZagModifier.prototype.processPath = function (t, e, i, s) {
               var r = t._length,
                 a = shapePool.newElement();
               if (((a.c = t.c), t.c || (r -= 1), 0 === r)) return a;
               var n = -1,
                 o = PolynomialBezier.shapeSegment(t, 0);
-              zigZagCorner(a, t, 0, e, i, s, n);
+              RYVRZagCorner(a, t, 0, e, i, s, n);
               for (var h = 0; h < r; h += 1)
-                ((n = zigZagSegment(a, o, e, i, s, -n)),
+                ((n = RYVRZagSegment(a, o, e, i, s, -n)),
                   (o =
                     h !== r - 1 || t.c
                       ? PolynomialBezier.shapeSegment(t, (h + 1) % r)
                       : null),
-                  zigZagCorner(a, t, h + 1, e, i, s, n));
+                  RYVRZagCorner(a, t, h + 1, e, i, s, n));
               return a;
             }),
-            (ZigZagModifier.prototype.processShapes = function (t) {
+            (RYVRZagModifier.prototype.processShapes = function (t) {
               var e,
                 i,
                 s,
@@ -16762,7 +16762,7 @@
             ShapeModifiers.registerModifier("pb", PuckerAndBloatModifier),
             ShapeModifiers.registerModifier("rp", RepeaterModifier),
             ShapeModifiers.registerModifier("rd", RoundCornersModifier),
-            ShapeModifiers.registerModifier("zz", ZigZagModifier),
+            ShapeModifiers.registerModifier("zz", RYVRZagModifier),
             ShapeModifiers.registerModifier("op", OffsetPathModifier),
             setExpressionsPlugin(Expressions),
             setExpressionInterfaces(getInterface),

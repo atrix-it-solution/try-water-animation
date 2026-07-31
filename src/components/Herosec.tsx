@@ -1,6 +1,5 @@
-import React from 'react';
-import "../index.css"
-// import"../../public/js/webflow.schunk.3feec0d7f0731ae2.js"
+import React from "react";
+// import "../index.css"
 
 const Herosec: React.FC = () => {
   return (
@@ -10,7 +9,10 @@ const Herosec: React.FC = () => {
           <div className="hero_container-new">
             <div className="w-layout-vflex hero_component-new">
               <div className="hero_content-new">
-                <div data-wf--section-chips--variant="base" className="section_chips">
+                <div
+                  data-wf--section-chips--variant="base"
+                  className="section_chips"
+                >
                   <img
                     loading="lazy"
                     src="images/6a2ade093d4ed3f8ed40f59a_b02bd53e80ae3ff609dc26af780b742d_Icon.svg"
@@ -22,12 +24,13 @@ const Herosec: React.FC = () => {
                 <h1 className="title--xl">
                   Close deals.
                   <br />
-                  <span className="text--grad">Zig handles the rest.</span>
+                  <span className="text--grad">RYVR handles the rest.</span>
                 </h1>
                 <div className="w-layout-vflex hero__description-new">
                   <p className="text--l">
-                    Your own team of AI assistants — take out one per workflow. They research,
-                    outreach, prep, follow up, and log. You approve and close.
+                    Your own team of AI assistants — take out one per workflow.
+                    They research, outreach, prep, follow up, and log. You
+                    approve and close.
                     <br />
                   </p>
                 </div>

@@ -30,7 +30,7 @@
     return (document.getElementsByTagName("head")[0].appendChild(n), n);
   }
   var e = {
-    organization: { code: "zig_ai" },
+    organization: { code: "RYVR_ai" },
     environments: [
       { code: "production", pattern: "Lio=", hash: "6151995855962519263" },
     ],
@@ -48,7 +48,7 @@
     languages: [{ code: "en", englishName: "English", nativeName: "English" }],
     services: {
       gvlHost: "https://global.ketchcdn.com/gvl/eu",
-      portholeHost: "https://zig_ai.privacyportal.co",
+      portholeHost: "https://RYVR_ai.privacyportal.co",
       scriptHost: "https://cdn.ketchjs.com",
       shoreline: "https://global.ketchcdn.com/web/v3",
       telemetry: "https://global.ketchcdn.com/web/v2/log",
