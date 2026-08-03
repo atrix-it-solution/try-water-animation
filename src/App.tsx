@@ -5,7 +5,6 @@ gsap.registerPlugin(ScrollTrigger);
 import ImpactSection from "./components/ImpactSection";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import { NanoBubbleSection } from "./components/NanoBubbleSectiondone";
 import { SalesSection } from "./components/SalesSection";
 import { ScrollVideoSection } from "./components/ScrollVideoSection";
 import HeroAnimation from "./components/HeroAnimation";
@@ -69,7 +68,6 @@ export const App: React.FC = () => {
          <ImpactSection />
          <HeroAnimation/>
          <ScrollVideoSection/>
-
          {/* <NanoBubbleSection/> */}
 
   <SalesSection/>

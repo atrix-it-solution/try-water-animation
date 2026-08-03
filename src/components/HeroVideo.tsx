@@ -1,6 +1,4 @@
-import React from "react";
-// Agar CSS alag file me rakhte hain toh import karein, 
-// warna direct Master CSS me add kar dein.
+
 import video from "../../public/Videos/hero.mp4"
 
 const HeroVideo = () => {

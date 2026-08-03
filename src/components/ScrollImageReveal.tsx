@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState, ReactNode } from 'react';
+import {  useEffect, useRef, useState } from 'react';
 // import './ScrollImageReveal.css';
 
 interface ScrollImageRevealProps {
   heading: string;
-  description: ReactNode;
+  // description: ReactNode;
   imageSrc: string;
   imageAlt?: string;
   sectionHeight?: number; // in vh, controls scroll distance (default 250)
@@ -11,7 +11,7 @@ interface ScrollImageRevealProps {
 
 const ScrollImageReveal = ({
   heading,
-  description,
+  // description,
   imageSrc,
   imageAlt = 'Product',
   sectionHeight = 250,
@@ -83,7 +83,7 @@ const ScrollImageReveal = ({
           }}
         >
           <h1 className="scroll-reveal-heading">{heading}</h1>
-          <p className="scroll-reveal-description">{description}</p>
+          {/* <p className="scroll-reveal-description">{description}</p> */}
         </div>
 
         <div className="scroll-reveal-image-wrapper">
