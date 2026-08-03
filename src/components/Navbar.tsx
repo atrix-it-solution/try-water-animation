@@ -3,6 +3,7 @@ import logo from "../../public/images/logo.png";
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -10,16 +11,19 @@ const Navbar = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // 1. Agar user page ke bilkul top par hai -> SHOW
-      if (currentScrollY === 0) {
-        setIsVisible(true);
+      // 1. Background Color Logic (100px cross karte hi white background class active)
+      if (currentScrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
       }
-      // 2. Agar user NEECHE (Scroll Down) kar raha hai aur 50px se zyada cross kar chuka hai -> HIDE
-      else if (currentScrollY > lastScrollY && currentScrollY > 50) {
+
+      // 2. Hide/Show Logic
+      if (currentScrollY <= 100) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
-      } 
-      // 3. Agar user UPAR (Scroll Up) kar raha hai -> SHOW
-      else if (currentScrollY < lastScrollY) {
+      } else if (currentScrollY < lastScrollY) {
         setIsVisible(true);
       }
 
@@ -34,7 +38,9 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`navbar ${isVisible ? "nav-visible" : "nav-hidden"}`}>
+    <header 
+      className={`navbar ${isVisible ? "nav-visible" : "nav-hidden"} ${isScrolled ? "nav-white-bg" : "nav-transparent"}`}
+    >
       <div className="nav-container">
         
         {/* Left: Logo */}
@@ -54,7 +60,6 @@ const Navbar = () => {
 
         {/* Right: Action Buttons */}
         <div className="nav-buttons">
-          {/* <a href="/book-a-meeting" className="btn btn-outline">Book a demo</a> */}
           <a href="/contact" className="btn btn-solid">Contact Us</a>
         </div>
 
