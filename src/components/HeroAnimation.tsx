@@ -3,9 +3,10 @@ import React from "react";
 
 const HeroAnimation: React.FC = () => {
   return (
-    <div className="hero-container">
+    <div className="hero-dev">
       {/* Left Side: Static Text Context */}
-      <div className="hero-left">
+      <div className="hero-container">
+        <div className="hero-left">
           <div className="section_chips is--blue">
             <span className="icon_chips_wave">🫧</span>
             <div>Nano Bubble Water</div>
@@ -132,6 +133,7 @@ const HeroAnimation: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

@@ -25,6 +25,8 @@ export const App: React.FC = () => {
       <main className="main_wrapp">
         {/* Hero Section */}
         <HeroVideo />
+        {/* <NanoBubbleSection/> */}
+        {/* <NanoBubbleSection/> */}
         <ScrollVideoSection />
         <HeroAnimation />
         <ImpactSection />

@@ -97,7 +97,7 @@ export const ScrollVideoSection: React.FC = () => {
 
           <h2 className="video-heading">
             Pure Water.<br />
-            Better Every Drop.
+            <span className="text-green">Better Every Drop.</span>
           </h2>
 
           <p className="video-subtext">

@@ -1,47 +1,34 @@
 
 
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap");
-
-/* ========================================================
-   1. GLOBAL VARIABLES (:root) - MASTER CONFIGURATION
-   ========================================================
-*/
 :root {
   /* --- BRAND COLORS --- */
   --primary: #2372d9; 
   --primary-hover: #1b5bb0; 
   --primary-light: #e0f2fe;
   --accent-orange: #ff8c3c;
-
   /* --- BACKGROUND COLORS --- */
   --bg-white: #ffffff;
   --bg-nav: #f2f6f5; 
   --bg-hero: #f7f9fc;
   --bg-section-light: #f6f8f9;
   --bg-dark-solid: #0a1414; 
-
   /* Gradients */
   --bg-grad-dark: radial-gradient(circle at center, #0a1128 0%, #03050a 100%);
   --bg-grad-footer: linear-gradient(135deg, #0f4088 0%, #03142e 100%);
-
   /* --- TEXT COLORS --- */
   --text-dark: #111827; 
   --text-body: #1f2937; 
   --text-muted: #4b5563;
   --text-light: #6b7280;
   --text-white: #ffffff;
-
   /* --- TYPOGRAPHY --- */
-
   /* Body Font */
   --font-body: "Manrope", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, sans-serif;
-
   /* Heading Font */
   --font-heading: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-
-
   /* --- BORDERS & SHADOWS --- */
   --border-light: rgba(0, 0, 0, 0.05);
   --border-medium: rgba(0, 0, 0, 0.12);
@@ -50,14 +37,12 @@
   --shadow-md: 0 10px 40px rgba(0, 0, 0, 0.03);
   --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.08);
   --shadow-glow: 0 15px 35px rgba(135, 225, 255, 0.2);
-
   /* --- BORDER RADIUS --- */
   --radius-pill: 50px;
   --radius-card-sm: 16px;
   --radius-card-md: 20px;
   --radius-card-lg: 32px;
 }
-
 /* ========================================================
    GLOBAL BUTTON STYLES (Fix for Hero & All Pages)
    ======================================================== */
@@ -75,27 +60,22 @@
   white-space: nowrap;
   box-sizing: border-box;
 }
-
-/* Solid Blue Button ("Get Started") */
 .btn-solid-blue {
   background-color: var(--primary, #2372d9);
   color: #ffffff !important; 
   border: 1.5px solid var(--primary, #2372d9);
 }
-
 .btn-solid-blue:hover {
   background-color: var(--primary-hover, #1b5bb0);
   border-color: var(--primary-hover, #1b5bb0);
   transform: translateY(-2px);
 }
 
-/* Outline White Button ("View Portfolio") */
 .btn-outline-white {
   background-color: transparent;
   color: #ffffff !important;
   border: 1.5px solid rgba(255, 255, 255, 0.7);
 }
-
 .btn-outline-white:hover {
   background-color: rgba(255, 255, 255, 0.15);
   border-color: #ffffff;
@@ -109,7 +89,6 @@
 *::after {
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   padding: 0;
@@ -118,10 +97,6 @@ body {
   background-color: var(--bg-white);
   overflow-x: hidden;
 }
-
-/* ========================================================
-   GLOBAL TYPOGRAPHY
-   ======================================================== */
 
 /* Headings */
 h1,
@@ -132,7 +107,6 @@ h5,
 h6 {
   font-family: var(--font-heading);
 }
-
 /* Body Text */
 body,
 p,
@@ -150,9 +124,7 @@ em,
 blockquote {
   font-family: var(--font-body);
 }
-
 /* All Custom Heading Classes */
-
 .hero-heading,
 .hero-left h1,
 .hero-subheading,
@@ -166,14 +138,11 @@ blockquote {
 .text-highlight {
   font-family: var(--font-heading);
 }
-
-/* Common Utilities */
 .padding_global {
-  padding-left: 7%;
+  padding-left: 9%;
   padding-right: 7%;
   padding-top: 7%;
 }
-
 .section_chips {
   display: inline-flex;
   align-items: center;
@@ -183,7 +152,6 @@ blockquote {
   color: var(--text-light);
   margin-bottom: 1rem;
 }
-
 .text--grad {
   background: linear-gradient(135deg, var(--primary) 0%, #0052cc 100%);
   -webkit-background-clip: text;
@@ -207,14 +175,12 @@ blockquote {
   padding: 18px 0;
   transition: transform 0.4s ease-in-out; 
 }
-
 .navbar.nav-visible {
   transform: translateY(0);
 }
 .navbar.nav-hidden {
   transform: translateY(-120%);
 }
-
 /* ========================================================
    3. CONTAINER
    ======================================================== */
@@ -228,8 +194,6 @@ blockquote {
   margin: 0 auto;
   padding: 0 32px;
 }
-
-/* Logo */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -241,25 +205,19 @@ blockquote {
   width: auto;
   filter: grayscale(5) brightness(11.5);
 }
-
 .nav-white-bg {
   background-color: #ffffff;
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1); 
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 .nav-white-bg .nav-logo img {
   filter: none !important; 
   transition: filter 0.3s ease; 
 }
-
 .nav-transparent .nav-logo img {
   filter: brightness(0) invert(1); 
   transition: filter 0.3s ease;
 }
-/* ========================================================
-   4. CENTER LINKS (Pill Box)
-   ======================================================== */
 .nav-links {
   background: #ffffff;
   border-radius: 100px;
@@ -268,14 +226,12 @@ blockquote {
   border: 1px solid #e2e8f0;
   margin: 0 16px;
 }
-
 .nav-links-content {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 58px;
 }
-
 .navbar .nav-link {
   color: #0f172a;
   text-decoration: none;
@@ -284,14 +240,9 @@ blockquote {
   white-space: nowrap;
   transition: color 0.2s ease;
 }
-
 .navbar .nav-link:hover {
   color: #2272d9;
 }
-
-/* ========================================================
-   5. RIGHT BUTTONS (#2272D9 Theme)
-   ======================================================== */
 .nav-buttons {
   display: flex;
   flex-direction: row;
@@ -299,7 +250,6 @@ blockquote {
   gap: 14px;
   flex-shrink: 0;
 }
-
 .navbar .btn {
   border-radius: 100px;
   padding: 13px 24px;
@@ -314,37 +264,29 @@ blockquote {
   transition: all 0.2s ease;
   opacity: 1; 
 }
-
-/* Outline Button */
 .navbar .btn-outline {
   background-color: transparent;
   color: #2272d9;
   border: 1.5px solid #2272d9;
 }
-
 .navbar .btn-outline:hover {
   background-color: rgba(34, 114, 217, 0.08);
 }
-
-/* Solid Button */
 .navbar .btn-solid {
   background-color: #2272d9;
   color: #ffffff;
   border: 1.5px solid #2272d9;
 }
-
 .navbar .btn-solid:hover {
   background-color: #1b5bb0;
   border-color: #1b5bb0;
 }
-
 /* ========================================================
    6. MOBILE VIEW
    ======================================================== */
 .menu-button {
   display: none;
 }
-
 @media screen and (max-width: 991px) {
   .nav-container {
     padding: 0 20px;
@@ -360,7 +302,6 @@ blockquote {
     display: none; 
   }
 }
-
 /* ========================================================
    HERO VIDEO SECTION
    ======================================================== */
@@ -375,8 +316,6 @@ blockquote {
   overflow: hidden;
   margin-top: 0;
 }
-
-/* Video Styling - Cover full screen */
 .bg-video {
   position: absolute;
   top: 0;
@@ -386,8 +325,6 @@ blockquote {
   object-fit: cover; 
   z-index: 0;
 }
-
-/* Gradient Overlay - Text readable banane ke liye */
 .video-overlay {
   position: absolute;
   top: 0;
@@ -401,8 +338,6 @@ blockquote {
   );
   z-index: 1;
 }
-
-/* Centered Content Styling */
 .hero-video-content {
   position: relative;
   z-index: 2; 
@@ -413,7 +348,6 @@ blockquote {
   flex-direction: column;
   align-items: center;
 }
-
 .hero-subheading {
   display: inline-block;
   font-size: 1.1rem;
@@ -423,7 +357,6 @@ blockquote {
   letter-spacing: 3px;
   margin-bottom: 1.5rem;
 }
-
 .hero-heading {
   font-size: clamp(3rem, 6vw, 5.5rem);
   font-weight: 800;
@@ -433,13 +366,11 @@ blockquote {
   letter-spacing: -0.02em;
   width: max-content;
 }
-
 .hero-heading .text-highlight {
   color: transparent;
   -webkit-text-stroke: 2px #ffffff;
   text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
 }
-
 .hero-description {
   font-size: clamp(1.1rem, 1.5vw, 1.3rem);
   line-height: 1.6;
@@ -447,14 +378,12 @@ blockquote {
   max-width: 650px;
   margin: 0 auto 2.5rem auto;
 }
-
 .hero-actions {
   display: flex;
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
 }
-
 .btn-outline-white {
   background-color: transparent;
   color: var(--text-white, #ffffff);
@@ -466,16 +395,10 @@ blockquote {
   text-decoration: none;
   transition: all 0.3s ease;
 }
-
 .btn-outline-white:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-color: var(--text-white, #ffffff);
 }
-
-
-
-
-/* Base navbar styling */
 .navbar {
   position: fixed;
   top: 0;
@@ -485,34 +408,20 @@ blockquote {
   /* Smooth transition hide/show aur background color dono ke liye */
   transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
 }
-
-/* Visibility Classes */
 .nav-visible {
   transform: translateY(0);
 }
-
 .nav-hidden {
   transform: translateY(-100%);
 }
-
-/* Background Classes */
 .nav-transparent {
   background-color: transparent;
   box-shadow: none;
 }
-
 .nav-white-bg {
   background-color: #ffffff; /* White background jab niche scroll ho */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); /* Halki si shadow depth ke liye */
 }
-
-
-
-
-
-
-
-
 .navbar .btn-outline {
   background-color: transparent;
   color: var(--primary);
@@ -530,11 +439,9 @@ blockquote {
   background-color: var(--primary-hover);
   border-color: var(--primary-hover);
 }
-
 .menu-button {
   display: none;
 }
-
 @media screen and (max-width: 991px) {
   .nav-container {
     padding: 0 20px;
@@ -548,7 +455,6 @@ blockquote {
     cursor: pointer;
   }
 }
-
 /* ========================================================
    4. HERO SECTION (Animations & Cards)
    ======================================================== */
@@ -559,11 +465,10 @@ blockquote {
   height: 100vh;
   min-height: 750px;
   background-color: var(--bg-hero);
-  padding: 0 8%;
+  padding: 0 13.5%;
   overflow: hidden;
   background-color: var(--bg-section-light)
 }
-
 .hero-left {
   width: 45%;
   z-index: 99;
@@ -576,7 +481,6 @@ blockquote {
   align-items: center;
   justify-content: center;
 }
-
 .tag {
   color: var(--text-light);
   font-size: 0.9rem;
@@ -600,7 +504,6 @@ blockquote {
   max-width: 450px;
   line-height: 1.6;
 }
-
 .btn-group button {
   padding: 12px 24px;
   border-radius: 30px;
@@ -619,7 +522,6 @@ blockquote {
   color: var(--primary);
   border: 1px solid var(--primary) !important;
 }
-
 .animation-wrapper {
   position: relative;
   width: 360px;
@@ -637,7 +539,6 @@ blockquote {
   border: 1px solid rgba(26, 118, 244, 0.2);
   z-index: -3;
 }
-
 .ac-card {
   position: absolute;
   width: 100%;
@@ -658,7 +559,6 @@ blockquote {
   box-shadow: var(--shadow-md);
   z-index: -1;
 }
-
 .ac-content {
   display: flex;
   align-items: center;
@@ -685,7 +585,6 @@ blockquote {
   color: var(--text-light);
   font-size: 0.8rem;
 }
-
 .status-icon {
   margin-left: auto;
   color: white;
@@ -911,9 +810,6 @@ blockquote {
     transform: translate(75px, 300px);
   }
 }
-/* ========================================================
-   5. SALES SECTION (Horizontal Scrolling Cards)
-   ======================================================== */
 .sales-scroll-wrapper {
   height: 400vh;
   background-color: var(--bg-section-light);
@@ -921,7 +817,6 @@ blockquote {
   overflow: clip;
   margin-top: 0;
 }
-
 .sales-sticky-viewport {
   position: sticky;
   top: 0;
@@ -932,9 +827,8 @@ blockquote {
   justify-content: space-between;
   overflow: hidden;
   padding-top: 0;
-  padding-bottom: 6vh;
+  padding-bottom: 11.5vh;
 }
-
 .sales-lines-svg {
   position: absolute;
   top: 0;
@@ -964,7 +858,6 @@ blockquote {
 .heading-container {
   max-width: 1200px;
 }
-
 .icon_chips_wave {
   font-size: 20px;
   color: var(--primary);
@@ -985,7 +878,6 @@ blockquote {
   max-width: 650px;
   margin: 0;
 }
-
 .sales-cards-viewport {
   width: 100%;
   overflow: visible;
@@ -996,9 +888,7 @@ blockquote {
   padding-left: 75vw;
   width: max-content;
   will-change: transform;
-  /* align-items: flex-end; */
 }
-
 .sales-card {
   width: 360px;
   min-height: clamp(210px, 26vh, 260px);
@@ -1046,43 +936,31 @@ blockquote {
   line-height: 1.35;
   font-weight: 500;
 }
-/* =========================================
-   Sales Card Buttons Container
-   ========================================= */
-.sales-card_btns {
-  display: flex;
-  gap: 16px; /* Thoda sa gap badhaya hai better spacing ke liye */
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-/* =========================================
-   Common Styles for Both Buttons
-   ========================================= */
-.sales-card_btns .btn-outline,
-.sales-card_btns .btn-solid {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 12px 28px; /* Button ko proper height aur width dene ke liye */
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 100px; /* Modern pill-shape design */
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease; /* Smooth animation */
-}
-
-/* =========================================
-   Sales Card Buttons Container
-   ========================================= */
 .sales-card_btns {
   display: flex;
   gap: 16px; 
   flex-wrap: wrap;
   align-items: center;
 }
-
+.sales-card_btns .btn-outline,
+.sales-card_btns .btn-solid {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 28px; 
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 100px; 
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease; 
+}
+.sales-card_btns {
+  display: flex;
+  gap: 16px; 
+  flex-wrap: wrap;
+  align-items: center;
+}
 .sales-card_btns .button {
   display: inline-flex;
   justify-content: center;
@@ -1095,35 +973,27 @@ blockquote {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .sales-card_btns .btn-solid {
   background-color: #ffffff; 
   color: var(--primary) !important; 
   border: 1.5px solid #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
-
-/* Solid Button Hover Effect */
 .sales-card_btns .btn-solid:hover {
   background-color: #f1f5f9;
   transform: translateY(-2px); 
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); 
 }
-
 .sales-card_btns .btn-outline {
   background-color: transparent;
   color: #ffffff !important;
   border: 1.5px solid #ffffff;
 }
-
 .sales-card_btns .btn-outline:hover {
   background-color: rgba(255, 255, 255, 0.15); 
   color: #ffffff !important;
   transform: translateY(-2px);
 }
-
-
-
 .horizontal-end-spacer {
   width: 22vw;
   flex-shrink: 0;
@@ -1134,7 +1004,6 @@ blockquote {
   box-shadow: none;
   pointer-events: none;
 }
-
 @media (max-width: 768px) {
   .sales-scroll-wrapper {
     height: 450vh;
@@ -1158,7 +1027,6 @@ blockquote {
     width: 15vw;
   }
 }
-
 .scroll-reveal-section {
   position: relative;
   background: var(--bg-dark-solid);
@@ -1218,7 +1086,6 @@ blockquote {
   object-fit: contain;
   will-change: transform, opacity;
 }
-
 /* ========================================================
    7. VIDEO SCROLL SECTION
    ======================================================== */
@@ -1240,7 +1107,7 @@ blockquote {
 .video-section-container {
   width: 100%;
   max-width: 1300px;
-  padding: 0 5%;
+  /* padding: 0 5%; */
   margin: 0 auto;
 }
 .video-grid {
@@ -1254,7 +1121,6 @@ blockquote {
   flex-direction: column;
   align-items: flex-start;
 }
-
 .section_chips.is--blue {
   display: flex;
   align-items: center;
@@ -1267,7 +1133,6 @@ blockquote {
   color: var(--text-dark);
   margin-bottom: 24px;
 }
-
 .impact-left .section_chips.is--blue {
   display: flex;
   align-items: center;
@@ -1281,7 +1146,6 @@ blockquote {
   margin-bottom: 24px;
   max-width: 165px;
 }
-
 .section_heading .section_chips.is--blue {
   display: flex;
   align-items: center;
@@ -1308,7 +1172,6 @@ blockquote {
   margin-bottom: 24px;
   max-width: 200px;
 }
-
 .video-heading {
   font-size: 4rem;
   line-height: 1.1;
@@ -1329,7 +1192,6 @@ blockquote {
   gap: 16px;
   flex-wrap: wrap;
 }
-
 .video-actions .button {
   padding: 14px 28px;
   border-radius: var(--radius-pill);
@@ -1355,7 +1217,6 @@ blockquote {
 .btn-outline-black:hover {
   background-color: #f5f5f5;
 }
-
 .video-media-content {
   width: 100%;
   display: flex;
@@ -1384,7 +1245,6 @@ blockquote {
   will-change: transform;
   transform: translateZ(0);
 }
-
 @media screen and (max-width: 991px) {
   .video-grid {
     grid-template-columns: 1fr;
@@ -1398,7 +1258,6 @@ blockquote {
     max-width: 100%;
   }
 }
-
 /* ========================================================
    8. NANO BUBBLE SCROLL SECTION
    ======================================================== */
@@ -1437,7 +1296,6 @@ blockquote {
   width: 100%;
   display: block;
 }
-
 @keyframes floatWander {
   0% {
     transform: translate(0px, 0px) scale(1);
@@ -1476,7 +1334,6 @@ blockquote {
   animation-duration: 4.8s;
   animation-delay: -3s;
 }
-
 /* ========================================================
    9. IMPACT SECTION
    ======================================================== */
@@ -1486,7 +1343,6 @@ blockquote {
   box-sizing: border-box;
   position: relative;
     background-color: var(--white);
-
 }
 .impact-section-wrapper .impact-section {
   width: 100%;
@@ -1524,7 +1380,6 @@ blockquote {
   color: var(--text-muted);
   line-height: 1.4;
 }
-
 .impact-section-wrapper .impact-stage {
   position: relative;
   width: 720px;
@@ -1573,7 +1428,6 @@ blockquote {
 .impact-section-wrapper .circle-card:hover {
   border-color: var(--primary) !important;
 }
-
 .impact-section-wrapper .circle-card.is--01 {
   top: 0;
   left: 0;
@@ -1590,7 +1444,6 @@ blockquote {
   bottom: 0;
   right: 0;
 }
-
 .impact-section-wrapper .card-inner {
   position: relative;
   z-index: 2;
@@ -1615,7 +1468,6 @@ blockquote {
 .impact-section-wrapper .circle-card:hover .desc {
   color: var(--text-white) !important;
 }
-
 .impact-section-wrapper .green-circle {
   position: absolute;
   top: 0;
@@ -1721,7 +1573,6 @@ blockquote {
   display: flex;
   flex-direction: column;
 }
-
 .footer-top {
 
   align-items: center;
@@ -1734,15 +1585,13 @@ blockquote {
 .flex-block-25 {
   align-items: center;
   gap: 20px;
-  max-width: 700px;
-}
+  max-width: 700px;}
 .footer-top .title--l {
   font-size: 56px;
   line-height: 1.1;
   font-weight: 500;
   margin: 0;
-  letter-spacing: -1px;
-}
+  letter-spacing: -1px;}
 .footer-top .text--l {
   font-size: 18px;
   line-height: 1.5;
@@ -1786,7 +1635,6 @@ blockquote {
   background-color: rgba(255, 255, 255, 0.1);
   border-color: var(--text-white);
 }
-
 .footer-bottom {
   padding-bottom: 60px;
 }
@@ -1798,7 +1646,6 @@ blockquote {
   border-top: none;
   padding-top: 60px;
 }
-
 .footer-logo_wrapp {
   gap: 15px;
 }
@@ -1819,7 +1666,6 @@ blockquote {
   color: rgba(255, 255, 255, 0.7);
   margin-top: 5px;
 }
-
 .footer_column-links {
   flex-direction: row;
   gap: 60px;
@@ -1840,7 +1686,6 @@ blockquote {
   opacity: 1;
   text-decoration: underline;
 }
-
 .footer_sn-wrapp {
   align-items: flex-end;
   gap: 20px;
@@ -1876,22 +1721,15 @@ blockquote {
   font-weight: 600;
   letter-spacing: 0.5px;
 }
-
-
-/* Container ko ek line mein rakhne aur spacing ke liye */
 .footer_sn-list {
   display: flex;
   align-items: center;
   gap: 16px; /* Buttons ke beech ka gap */
 }
-
-/* Link ki default styling hatane ke liye */
 .footer_sn-link {
   text-decoration: none;
   display: inline-block;
 }
-
-/* Background aur Icon ki styling */
 .footer_sn-icon {
   display: flex;
   justify-content: center;
@@ -1905,19 +1743,12 @@ blockquote {
   transition: all 0.3s ease; /* Hover effect ko smooth banane ke liye */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Halki si shadow */
 }
-
-/* Hover Effect - Jab mouse button par jayega */
 .footer_sn-link:hover .footer_sn-icon {
   background-color: #2272D9; /* RYVR theme ka blue background */
   color: #ffffff; /* Icon white ho jayega */
   transform: translateY(-4px); /* Button thoda sa upar uthega */
   box-shadow: 0 6px 15px rgba(34, 114, 217, 0.3); /* Blue shadow */
 }
-
-
-
-
-
 @media screen and (max-width: 991px) {
   .footer-top .title--l {
     font-size: 42px;
