@@ -56,7 +56,7 @@ export const App: React.FC = () => {
       </div> */}
        <Navbar/>
       <HeroVideo/>
-      {/* <HeroAnimation/> */}
+      
       {/* Navbar */}
      
 
@@ -64,9 +64,10 @@ export const App: React.FC = () => {
       <main className="main_wrapp"> 
         {/* Hero Section */}
          {/* <Herosec/> */}
-
+          
         {/* Impact Section */}
          <ImpactSection />
+         <HeroAnimation/>
          <ScrollVideoSection/>
 
          {/* <NanoBubbleSection/> */}

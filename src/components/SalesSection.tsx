@@ -142,10 +142,14 @@ export const SalesSection: React.FC = () => {
     <div className="sales-section_heading">
       <div className="section_heading">
 
-        <div className="section_chips">
+        {/* <div className="section_chips">
           <span className="icon_chips_wave">🫧</span>
           <div>Nano Bubble Technology</div>
-        </div>
+        </div> */}
+        <div className="section_chips is--blue">
+            <span className="icon_chips_wave">🫧</span>
+            <div>Nano Bubble Technology</div>
+          </div>
 
         <div className="sales-section_title">
           <h2 className="title--l">

@@ -54,8 +54,8 @@ const Navbar = () => {
 
         {/* Right: Action Buttons */}
         <div className="nav-buttons">
-          <a href="/book-a-meeting" className="btn btn-outline">Book a demo</a>
-          <a href="/login" className="btn btn-solid">Login</a>
+          {/* <a href="/book-a-meeting" className="btn btn-outline">Book a demo</a> */}
+          <a href="/contact" className="btn btn-solid">Contact Us</a>
         </div>
 
         {/* Mobile Hamburger */}

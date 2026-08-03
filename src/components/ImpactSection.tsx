@@ -74,17 +74,21 @@ export default function ImpactSection() {
     <div className="impact-container">
       {/* Left Side: Text */}
       <div className="impact-left">
-        <div className="section_chips">
+        {/* <div className="section_chips">
           <img src="/path-to-icon.svg" alt="" className="chips_icon" />
           Nano Benefits
-        </div>
+        </div> */}
+        <div className="section_chips is--blue">
+            <span className="icon_chips_wave">🫧</span>
+            <div>Nano Benefits</div>
+          </div>
 
         <h2 className="impact-title">
           Experience the Power of <span className="text-grad">Nano Bubble Water</span>
         </h2>
 
         <p className="impact-sub">
-          Cleaner. Fresher. Smarter hydration with every drop.
+          Discover the next generation of hydration with Nano Bubble Water. Infused with billions of microscopic oxygen-rich bubbles, it helps maintain exceptional freshness, supports cleaner and better-quality water, and delivers a refreshing experience with every sip.
         </p>
       </div>
 

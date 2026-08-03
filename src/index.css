@@ -416,10 +416,13 @@ blockquote {
   color: var(--text-white, #ffffff);
   margin: 0 0 1.5rem 0;
   letter-spacing: -0.02em;
+  width: max-content;
 }
 
 .hero-heading .text-highlight {
-  color: var(--primary, #2372d9);
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
 }
 
 .hero-description {
@@ -506,7 +509,7 @@ blockquote {
 
 .hero-left {
   width: 45%;
-  z-index: 10;
+  z-index: 99;
 }
 .hero-right {
   width: 55%;
@@ -528,6 +531,7 @@ blockquote {
   line-height: 1.1;
   color: var(--text-dark);
   margin-bottom: 20px;
+  margin: 0;
 }
 .text-green {
   color: var(--primary);
@@ -985,11 +989,84 @@ blockquote {
   line-height: 1.35;
   font-weight: 500;
 }
+/* =========================================
+   Sales Card Buttons Container
+   ========================================= */
 .sales-card_btns {
   display: flex;
-  gap: 14px;
+  gap: 16px; /* Thoda sa gap badhaya hai better spacing ke liye */
   flex-wrap: wrap;
+  align-items: center;
 }
+
+/* =========================================
+   Common Styles for Both Buttons
+   ========================================= */
+.sales-card_btns .btn-outline,
+.sales-card_btns .btn-solid {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 28px; /* Button ko proper height aur width dene ke liye */
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 100px; /* Modern pill-shape design */
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth animation */
+}
+
+/* =========================================
+   Sales Card Buttons Container
+   ========================================= */
+.sales-card_btns {
+  display: flex;
+  gap: 16px; 
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.sales-card_btns .button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 100px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sales-card_btns .btn-solid {
+  background-color: #ffffff; 
+  color: var(--primary) !important; 
+  border: 1.5px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* Solid Button Hover Effect */
+.sales-card_btns .btn-solid:hover {
+  background-color: #f1f5f9;
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); 
+}
+
+.sales-card_btns .btn-outline {
+  background-color: transparent;
+  color: #ffffff !important;
+  border: 1.5px solid #ffffff;
+}
+
+.sales-card_btns .btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.15); 
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+
+
 .horizontal-end-spacer {
   width: 22vw;
   flex-shrink: 0;
@@ -1024,9 +1101,7 @@ blockquote {
     width: 15vw;
   }
 }
-/* ========================================================
-   6. SCROLL REVEAL SECTION
-   ======================================================== */
+
 .scroll-reveal-section {
   position: relative;
   background: var(--bg-dark-solid);
@@ -1135,13 +1210,55 @@ blockquote {
   color: var(--text-dark);
   margin-bottom: 24px;
 }
+
+.impact-left .section_chips.is--blue {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border-medium);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  max-width: 165px;
+}
+
+.section_heading .section_chips.is--blue {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border-medium);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  max-width: 240px;
+}
+.hero-container .hero-left .section_chips.is--blue {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border-medium);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  max-width: 200px;
+}
+
 .video-heading {
   font-size: 4rem;
   line-height: 1.1;
   font-weight: 700;
   color: var(--text-dark);
-  margin-bottom: 24px;
   letter-spacing: -0.03em;
+  margin: 0;
 }
 .video-subtext {
   font-size: 1.125rem;
@@ -1338,6 +1455,7 @@ blockquote {
   color: var(--text-dark);
   margin-bottom: 1.2rem;
   letter-spacing: -0.03em;
+  margin-top: 0;
 }
 .impact-section-wrapper .text-grad {
   color: var(--primary);

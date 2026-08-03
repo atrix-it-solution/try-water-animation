@@ -1,5 +1,4 @@
 import React from "react";
-import { GiBubbles } from "react-icons/gi";
 // import "./HeroAnimation.css";
 
 const HeroAnimation: React.FC = () => {
@@ -7,10 +6,11 @@ const HeroAnimation: React.FC = () => {
     <div className="hero-container">
       {/* Left Side: Static Text Context */}
       <div className="hero-left">
-        <div className="tag">
-          <GiBubbles />
-          <span>Nano Bubble Water</span>
-        </div>
+          <div className="section_chips is--blue">
+            <span className="icon_chips_wave">🫧</span>
+            <div>Nano Bubble Water</div>
+          </div>
+
 
         <h1>
           Smarter Water.<br />
