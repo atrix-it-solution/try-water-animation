@@ -19,49 +19,43 @@ export const ScrollVideoSection: React.FC = () => {
       const rawProgress = Math.min(1, Math.max(0, currentScroll / maxScroll));
       targetProgressRef.current = rawProgress;
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
+
     let animationFrameId: number;
     let lastFrameTime = performance.now();
     const SMOOTHING_STRENGTH = 0.22;
     const SEEK_THRESHOLD = 0.016; 
+
     const renderLoop = (now: number) => {
       const deltaMs = now - lastFrameTime;
       lastFrameTime = now;
       const smoothing = 1 - Math.pow(1 - SMOOTHING_STRENGTH, deltaMs / 16.67);
-      currentProgressRef.current +=
-        (targetProgressRef.current - currentProgressRef.current) * smoothing;
+      currentProgressRef.current += (targetProgressRef.current - currentProgressRef.current) * smoothing;
       const video = videoRef.current;
-      if (
-        video &&
-        video.duration &&
-        !isNaN(video.duration) &&
-        video.readyState >= 2
-      ) {
+
+      if (video && video.duration && !isNaN(video.duration) && video.readyState >= 2) {
         const targetTime = currentProgressRef.current * video.duration;
-        if (
-          !video.seeking &&
-          Math.abs(video.currentTime - targetTime) > SEEK_THRESHOLD
-        ) {
+        if (!video.seeking && Math.abs(video.currentTime - targetTime) > SEEK_THRESHOLD) {
           video.currentTime = targetTime;
         }
       }
       animationFrameId = requestAnimationFrame(renderLoop);
     };
+
     animationFrameId = requestAnimationFrame(renderLoop);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
+
   const handleVideoReady = () => {
     const video = videoRef.current;
     if (!video) return;
-    video
-      .play()
-      .then(() => video.pause())
-      .catch(() => {});
-
+    video.play().then(() => video.pause()).catch(() => {});
     setIsLoaded(true);
   };
 
@@ -76,23 +70,18 @@ export const ScrollVideoSection: React.FC = () => {
                 <span className="icon_chips_wave">🫧</span>
                 <div>Nano Bubble Technology</div>
               </div>
-
               <h2 className="video-heading">
                 Pure Water.
                 <br />
                 <span className="text-green">Better Every Drop.</span>
               </h2>
-
               <p className="video-subtext">
-                Experience cleaner, fresher, and oxygen-rich water powered by
-                billions of nano bubbles that stay suspended for longer.
+                Experience cleaner, fresher, and oxygen-rich water powered by billions of nano bubbles that stay suspended for longer.
               </p>
-
               <div className="video-actions">
                 <a href="#start" className="button btn-solid-blue">
                   <div>Explore Water</div>
                 </a>
-
                 <a href="#demo" className="button btn-outline-black">
                   <div>Contact Us</div>
                 </a>
@@ -100,9 +89,7 @@ export const ScrollVideoSection: React.FC = () => {
             </div>
             {/* Right Side: Video */}
             <div className="video-media-content">
-              <div
-                className={`video-player-wrapper ${isLoaded ? "is-loaded" : ""}`}
-              >
+              <div className={`video-player-wrapper ${isLoaded ? "is-loaded" : ""}`}>
                 <video
                   ref={videoRef}
                   className="scroll-video"

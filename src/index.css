@@ -1580,7 +1580,7 @@ blockquote {
 }
 .footer-top {
 
-  padding-top:60px;
+  padding-top:90px;
   align-items: center;
   text-align: center;
 }
@@ -1642,7 +1642,7 @@ blockquote {
   border-color: var(--text-white);
 }
 .footer-bottom {
-  padding-bottom: 60px;
+  padding-bottom: 80px;
 }
 .footer_container-grid {
   display: grid;

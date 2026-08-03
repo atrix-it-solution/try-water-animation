@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-// import './SalesSection.css';
 
 export const SalesSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -12,7 +11,7 @@ export const SalesSection: React.FC = () => {
   const currentProgressRef = useRef(0);
 
   useEffect(() => {
-    // 👇 Yahan se aap card stop position adjust kar lena
+    // Card Stop Position
     const maxTranslateX = 75;
 
     const handleScroll = () => {
@@ -33,9 +32,7 @@ export const SalesSection: React.FC = () => {
     let animationFrameId: number;
 
     const renderLoop = () => {
-      currentProgressRef.current +=
-        (targetProgressRef.current - currentProgressRef.current) * 0.14;
-
+      currentProgressRef.current += (targetProgressRef.current - currentProgressRef.current) * 0.14;
       const diff = Math.abs(targetProgressRef.current - currentProgressRef.current);
       const progress = diff > 0.0001 ? currentProgressRef.current : targetProgressRef.current;
 
@@ -46,7 +43,6 @@ export const SalesSection: React.FC = () => {
 
       if (stickyRef.current) {
         const stickyRect = stickyRef.current.getBoundingClientRect();
-        
         const topX = stickyRect.width * 0.90;
         const topY = -80;
         const bottomY = stickyRect.height + 100;
@@ -71,16 +67,15 @@ export const SalesSection: React.FC = () => {
 
         lineRefs.current.forEach((lineEl, index) => {
           if (!lineEl) return;
-
           let targetX = 0;
           let targetY = baseTop;
 
-          // 1. Starting ki 2 Phantom Lines
+          // Starting Phantom Lines
           if (index < 2) {
             const offsetMultiplier = 2 - index; 
             targetX = (baseLeft + cardWidth / 2) - ((cardWidth + gap) * offsetMultiplier);
           } 
-          // 2. Beech ke 5 Real Cards
+          // Real Cards
           else if (index >= 2 && index < 7) {
             const cardEl = cardRefs.current[index - 2];
             if (cardEl) {
@@ -89,12 +84,11 @@ export const SalesSection: React.FC = () => {
               targetY = (rect.top - stickyRect.top);
             }
           } 
-          // 3. NEW: Red card ke baad aakhiri (End) Phantom Line
+          // End Phantom Line
           else if (index === 7) {
-            const lastCard = cardRefs.current[4]; // CTA Card
+            const lastCard = cardRefs.current[4];
             if (lastCard) {
               const rect = lastCard.getBoundingClientRect();
-              // Red card ka right edge + gap + imaginary agle card ka center
               targetX = (rect.right - stickyRect.left) + gap + (cardWidth / 2);
               targetY = baseTop;
             }
@@ -124,9 +118,8 @@ export const SalesSection: React.FC = () => {
   return (
     <div className="sales-scroll-wrapper" ref={sectionRef}>
       <div className="sales-sticky-viewport" ref={stickyRef}>
-
+        
         <svg className="sales-lines-svg">
-          {/* Ab yahan 0 se 7 tak map hoga (Total 8 lines) */}
           {[0, 1, 2, 3, 4, 5, 6, 7].map((index) => (
             <line
               key={index}
@@ -136,96 +129,78 @@ export const SalesSection: React.FC = () => {
           ))}
         </svg>
 
-  <section className="section sales-section ">
-
-
-    <div className="container ">
-      <div className="sales-section_heading">
-        <div className="section_heading">
-
-          {/* <div className="section_chips">
-            <span className="icon_chips_wave">🫧</span>
-            <div>Nano Bubble Technology</div>
-          </div> */}
-          <div className="section_chips is--blue">
-              <span className="icon_chips_wave">🫧</span>
-              <div>Nano Bubble Technology</div>
-            </div>
-
-          <div className="sales-section_title">
-            <h2 className="title--l">
-              <span className="text--grad">Smarter Water.</span> Better Hydration Every Day
-            </h2>
-
-            <div className="sales-section_sub">
-              <p className="text--l">
-                Experience advanced nano bubble technology designed to deliver cleaner, fresher, and oxygen-rich water in every sip.
-              </p>
+        <section className="section sales-section">
+          <div className="container">
+            <div className="sales-section_heading">
+              <div className="section_heading">
+                <div className="section_chips is--blue">
+                  <span className="icon_chips_wave">🫧</span>
+                  <div>Nano Bubble Technology</div>
+                </div>
+                <div className="sales-section_title">
+                  <h2 className="title--l">
+                    <span className="text--grad">Smarter Water.</span> Better Hydration Every Day
+                  </h2>
+                  <div className="sales-section_sub">
+                    <p className="text--l">
+                      Experience advanced nano bubble technology designed to deliver cleaner, fresher, and oxygen-rich water in every sip.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-        </div>
-      </div>
-  </div>
+          <div className="sales-cards-viewport">
+            <div className="sales-cards_track" ref={trackRef}>
+              
+              <div className="sales-card" ref={(el) => { cardRefs.current[0] = el; }}>
+                <div className="title--s is--green">Step 01</div>
+                <div className="title--xs">
+                  Water is infused with billions of ultra-fine nano bubbles.
+                </div>
+              </div>
 
-    <div className="sales-cards-viewport">
-    <div
-      className="sales-cards_track"
-      ref={trackRef} >
+              <div className="sales-card" ref={(el) => { cardRefs.current[1] = el; }}>
+                <div className="title--s is--green">Step 02</div>
+                <div className="title--xs">
+                  Nano bubbles remain suspended for long-lasting freshness.
+                </div>
+              </div>
 
-      <div className="sales-card" ref={(el) => { cardRefs.current[0] = el; }}>
-        <div className="title--s is--green">Step 01</div>
-        <div className="title--xs">
-          Water is infused with billions of ultra-fine nano bubbles.
-        </div>
-      </div>
+              <div className="sales-card" ref={(el) => { cardRefs.current[2] = el; }}>
+                <div className="title--s is--green">Step 03</div>
+                <div className="title--xs">
+                  Enhanced oxygen helps improve water quality naturally.
+                </div>
+              </div>
 
-      <div className="sales-card" ref={(el) => { cardRefs.current[1] = el; }}>
-        <div className="title--s is--green">Step 02</div>
-        <div className="title--xs">
-          Nano bubbles remain suspended for long-lasting freshness.
-        </div>
-      </div>
+              <div className="sales-card" ref={(el) => { cardRefs.current[3] = el; }}>
+                <div className="title--s is--green">Step 04</div>
+                <div className="title--xs">
+                  Enjoy a cleaner, fresher, and premium hydration experience.
+                </div>
+              </div>
 
-      <div className="sales-card" ref={(el) => { cardRefs.current[2] = el; }}>
-        <div className="title--s is--green">Step 03</div>
-        <div className="title--xs">
-          Enhanced oxygen helps improve water quality naturally.
-        </div>
-      </div>
+              <div className="sales-card is--cta" ref={(el) => { cardRefs.current[4] = el; }}>
+                <div className="title--s cta-title">
+                  Experience the future of hydration with Nano Bubble Water.
+                </div>
+                <div className="sales-card_btns">
+                  <a href="#start" className="button btn-outline">
+                    <div>Explore Water</div>
+                  </a>
+                  <a href="#demo" className="button btn-solid">
+                    <div>Contact Us</div>
+                  </a>
+                </div>
+              </div>
 
-      <div className="sales-card" ref={(el) => { cardRefs.current[3] = el; }}>
-        <div className="title--s is--green">Step 04</div>
-        <div className="title--xs">
-          Enjoy a cleaner, fresher, and premium hydration experience.
-        </div>
-      </div>
-
-      <div className="sales-card is--cta" ref={(el) => { cardRefs.current[4] = el; }}>
-        <div className="title--s cta-title">
-          Experience the future of hydration with Nano Bubble Water.
-        </div>
-
-        <div className="sales-card_btns">
-          <a href="#start" className="button btn-outline">
-            <div>Explore Water</div>
-          </a>
-
-          <a href="#demo" className="button btn-solid">
-            <div>Contact Us</div>
-          </a>
-        </div>
-      </div>
-
-      <div className="horizontal-end-spacer"></div>
-
-    </div>
-  </div>
-
-
-
-
-</section>
+              <div className="horizontal-end-spacer"></div>
+              
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );

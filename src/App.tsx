@@ -21,17 +21,12 @@ export const App: React.FC = () => {
   return (
     <div className="page_wrapp">
       <Navbar />
-
       <main className="main_wrapp">
-        {/* Hero Section */}
         <HeroVideo />
-        {/* <NanoBubbleSection/> */}
-        {/* <NanoBubbleSection/> */}
         <ScrollVideoSection />
         <HeroAnimation />
         <ImpactSection />
         <SalesSection />
-        {/* Footer Section */}
         <Footer />
       </main>
     </div>

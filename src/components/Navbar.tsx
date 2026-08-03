@@ -11,14 +11,14 @@ const Navbar = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // 1. Background Color Logic (100px cross karte hi white background class active)
+      // Background Color Logic
       if (currentScrollY > 100) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
 
-      // 2. Hide/Show Logic
+      // Hide/Show Logic
       if (currentScrollY <= 100) {
         setIsVisible(true);
       } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
@@ -31,23 +31,16 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header 
-      className={`navbar ${isVisible ? "nav-visible" : "nav-hidden"} ${isScrolled ? "nav-white-bg" : "nav-transparent"}`}
-    >
-      <div className=" container">
-        
+    <header className={`navbar ${isVisible ? "nav-visible" : "nav-hidden"} ${isScrolled ? "nav-white-bg" : "nav-transparent"}`}>
+      <div className="container">
         {/* Left: Logo */}
         <a href="/" className="nav-logo">
           <img src={logo} alt="RYVR Logo" />
         </a>
-
         {/* Center: Links Pill */}
         <nav className="nav-links">
           <div className="nav-links-content">
@@ -57,19 +50,16 @@ const Navbar = () => {
             <a href="/blog" className="nav-link">Blog</a>
           </div>
         </nav>
-
         {/* Right: Action Buttons */}
         <div className="nav-buttons">
           <a href="/contact" className="btn btn-solid">Contact Us</a>
         </div>
-
         {/* Mobile Hamburger */}
         <div className="menu-button">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 36 36" fill="none">
             <path d="M4.5 12.75H31.5M4.5 23.25H31.5" stroke="#15171A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
-
       </div>
     </header>
   );
