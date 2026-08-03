@@ -1,18 +1,14 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-console.log("GSAP Version:", gsap.version);
-console.log("ScrollTrigger:", ScrollTrigger);
-// gsap.registerPlugin(ScrollTrigger);
+import { ScrollTrigger } from "gsap/ScrollTrigger"; // ✅ Correct import path (dist/ hataya)
+
+// ✅ Register ALWAYS component ke outer/top-level scope par karein
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ImpactSection() {
   const mainRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-
-    
-gsap.registerPlugin(ScrollTrigger);
-
     let ctx = gsap.context(() => {
       let mm = gsap.matchMedia();
 
@@ -68,75 +64,71 @@ gsap.registerPlugin(ScrollTrigger);
       });
     }, mainRef);
 
-    return () => ctx.revert(); // Completely reverts GSAP changes so page layout stays intact
+    return () => ctx.revert(); // Completely reverts GSAP changes
   }, []);
 
   return (
-   <div ref={mainRef} className="impact-section-wrapper">
-  <section className="impact-section">
-    <div className="impact-container">
-      {/* Left Side: Text */}
-      <div className="impact-left">
-        {/* <div className="section_chips">
-          <img src="/path-to-icon.svg" alt="" className="chips_icon" />
-          Nano Benefits
-        </div> */}
-        <div className="section_chips is--blue">
-            <span className="icon_chips_wave">🫧</span>
-            <div>Nano Benefits</div>
+    <div ref={mainRef} className="impact-section-wrapper">
+      <section className="impact-section">
+        <div className="impact-container">
+          {/* Left Side: Text */}
+          <div className="impact-left">
+            <div className="section_chips is--blue">
+              <span className="icon_chips_wave">🫧</span>
+              <div>Nano Benefits</div>
+            </div>
+
+            <h2 className="impact-title">
+              Experience the Power of <span className="text-grad">Nano Bubble Water</span>
+            </h2>
+
+            <p className="impact-sub">
+              Discover the next generation of hydration with Nano Bubble Water. Infused with billions of microscopic oxygen-rich bubbles, it helps maintain exceptional freshness, supports cleaner and better-quality water, and delivers a refreshing experience with every sip.
+            </p>
           </div>
 
-        <h2 className="impact-title">
-          Experience the Power of <span className="text-grad">Nano Bubble Water</span>
-        </h2>
+          {/* Right Side: Stage Container */}
+          <div className="impact-stage">
+            <div className="circle-card is--01">
+              <div className="card-inner">
+                <div className="num">99.9%</div>
+                <div className="desc">Advanced purity with nano bubble technology.</div>
+              </div>
+            </div>
 
-        <p className="impact-sub">
-          Discover the next generation of hydration with Nano Bubble Water. Infused with billions of microscopic oxygen-rich bubbles, it helps maintain exceptional freshness, supports cleaner and better-quality water, and delivers a refreshing experience with every sip.
-        </p>
-      </div>
+            <div className="circle-card is--02">
+              <div className="card-inner">
+                <div className="num">24/7</div>
+                <div className="desc">Long-lasting nano bubbles inside the water.</div>
+              </div>
+            </div>
 
-      {/* Right Side: Stage Container */}
-      <div className="impact-stage">
-        <div className="circle-card is--01">
-          <div className="card-inner">
-            <div className="num">99.9%</div>
-            <div className="desc">Advanced purity with nano bubble technology.</div>
-          </div>
-        </div>
+            <div className="circle-card is--03">
+              <div className="card-inner">
+                <div className="num">100%</div>
+                <div className="desc">Fresh, clean, and oxygen-enriched hydration.</div>
+              </div>
+            </div>
 
-        <div className="circle-card is--02">
-          <div className="card-inner">
-            <div className="num">24/7</div>
-            <div className="desc">Long-lasting nano bubbles inside the water.</div>
-          </div>
-        </div>
+            <div className="circle-card is--04">
+              <div className="card-inner">
+                <div className="num">∞</div>
+                <div className="desc">
+                  Innovation inspired by next-generation water technology.
+                </div>
+              </div>
+            </div>
 
-        <div className="circle-card is--03">
-          <div className="card-inner">
-            <div className="num">100%</div>
-            <div className="desc">Fresh, clean, and oxygen-enriched hydration.</div>
-          </div>
-        </div>
-
-        <div className="circle-card is--04">
-          <div className="card-inner">
-            <div className="num">∞</div>
-            <div className="desc">
-              Innovation inspired by next-generation water technology.
+            {/* Solid Massive Green Circle Layer */}
+            <div className="green-circle">
+              <p className="accent-text">
+                Every sip is enhanced with billions of nano bubbles for a cleaner,
+                fresher, and healthier hydration experience.
+              </p>
             </div>
           </div>
         </div>
-
-        {/* Solid Massive Green Circle Layer */}
-        <div className="green-circle">
-          <p className="accent-text">
-            Every sip is enhanced with billions of nano bubbles for a cleaner,
-            fresher, and healthier hydration experience.
-          </p>
-        </div>
-      </div>
+      </section>
     </div>
-  </section>
-</div>
   );
 }

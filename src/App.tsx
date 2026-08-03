@@ -1,6 +1,6 @@
 import React from "react";
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import ImpactSection from "./components/ImpactSection";
 import Navbar from './components/Navbar';
