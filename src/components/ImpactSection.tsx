@@ -1,18 +1,18 @@
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger"; // ✅ Correct import path (dist/ hataya)
-
-// ✅ Register ALWAYS component ke outer/top-level scope par karein
-gsap.registerPlugin(ScrollTrigger);
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function ImpactSection() {
   const mainRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    // 🔥 100% FIX FOR VITE/NETLIFY: Hook ke andar register karein!
+    // Ab bundler is line ko delete nahi kar payega.
+    gsap.registerPlugin(ScrollTrigger);
+
     let ctx = gsap.context(() => {
       let mm = gsap.matchMedia();
 
-      // Tablet & Desktop screen (768px and above) - Scroll Animation Enabled
       mm.add("(min-width: 768px)", () => {
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -39,33 +39,22 @@ export default function ImpactSection() {
           .to(".is--03", { xPercent: 50, yPercent: -50, duration: 1, ease: "power2.inOut" }, 0)
           .to(".is--04", { xPercent: -50, yPercent: -50, duration: 1, ease: "power2.inOut" }, 0);
 
-        tl.to(
-          ".green-circle",
-          {
-            scale: 0.75,
-            duration: 1.5,
-            ease: "power2.inOut",
-          },
-          0.8
-        );
-
+        tl.to(".green-circle", { scale: 0.75, duration: 1.5, ease: "power2.inOut" }, 0.8);
         tl.to(".circle-card", { opacity: 0, duration: 0.1 }, 1.5);
-
-        tl.to(
-          ".accent-text",
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: "power2.out",
-          },
-          1.7
-        );
+        tl.to(".accent-text", { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 1.7);
       });
     }, mainRef);
 
-    return () => ctx.revert(); // Completely reverts GSAP changes
-  }, []);
+    const handleLoad = () => {
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener("load", handleLoad);
+
+    return () => {
+      ctx.revert();
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []); // Empty array
 
   return (
     <div ref={mainRef} className="impact-section-wrapper">
@@ -95,35 +84,28 @@ export default function ImpactSection() {
                 <div className="desc">Advanced purity with nano bubble technology.</div>
               </div>
             </div>
-
             <div className="circle-card is--02">
               <div className="card-inner">
                 <div className="num">24/7</div>
                 <div className="desc">Long-lasting nano bubbles inside the water.</div>
               </div>
             </div>
-
             <div className="circle-card is--03">
               <div className="card-inner">
                 <div className="num">100%</div>
                 <div className="desc">Fresh, clean, and oxygen-enriched hydration.</div>
               </div>
             </div>
-
             <div className="circle-card is--04">
               <div className="card-inner">
                 <div className="num">∞</div>
-                <div className="desc">
-                  Innovation inspired by next-generation water technology.
-                </div>
+                <div className="desc">Innovation inspired by next-generation water technology.</div>
               </div>
             </div>
 
-            {/* Solid Massive Green Circle Layer */}
             <div className="green-circle">
               <p className="accent-text">
-                Every sip is enhanced with billions of nano bubbles for a cleaner,
-                fresher, and healthier hydration experience.
+                Every sip is enhanced with billions of nano bubbles for a cleaner, fresher, and healthier hydration experience.
               </p>
             </div>
           </div>
