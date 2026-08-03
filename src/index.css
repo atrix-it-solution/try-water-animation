@@ -204,9 +204,7 @@ blockquote {
   right: 0;
   width: 100%;
   z-index: 9999;
-  background-color: #ffffff;
-  padding: 16px 0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+  padding: 18px 0;
   transition: transform 0.4s ease-in-out; 
 }
 
@@ -239,8 +237,9 @@ blockquote {
   flex-shrink: 0;
 }
 .nav-logo img {
-  height: 36px;
+  height: 43px;
   width: auto;
+  filter: grayscale(5) brightness(11.5);
 }
 /* ========================================================
    4. CENTER LINKS (Pill Box)
@@ -248,7 +247,7 @@ blockquote {
 .nav-links {
   background: #ffffff;
   border-radius: 100px;
-  padding: 10px 32px;
+  padding: 13px 32px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
   border: 1px solid #e2e8f0;
   margin: 0 16px;
@@ -258,7 +257,7 @@ blockquote {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 28px;
+  gap: 58px;
 }
 
 .navbar .nav-link {
@@ -287,7 +286,7 @@ blockquote {
 
 .navbar .btn {
   border-radius: 100px;
-  padding: 10px 24px;
+  padding: 13px 24px;
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
@@ -505,6 +504,7 @@ blockquote {
   background-color: var(--bg-hero);
   padding: 0 8%;
   overflow: hidden;
+  background-color: var(--bg-section-light)
 }
 
 .hero-left {
@@ -939,7 +939,7 @@ blockquote {
   padding-left: 75vw;
   width: max-content;
   will-change: transform;
-  align-items: flex-end;
+  /* align-items: flex-end; */
 }
 
 .sales-card {
@@ -1428,6 +1428,8 @@ blockquote {
   background-color: var(--bg-section-light);
   box-sizing: border-box;
   position: relative;
+    background-color: var(--white);
+
 }
 .impact-section-wrapper .impact-section {
   width: 100%;

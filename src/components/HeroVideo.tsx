@@ -22,16 +22,16 @@ const HeroVideo = () => {
 
       {/* Center Content */}
       <div className="hero-video-content">
-        <span className="hero-subheading">Welcome to the Future</span>
+        <span className="hero-subheading">Pure. Premium. Naturally Elevated</span>
         
         <h1 className="hero-heading">
-          Transform Your Digital <br />
-          <span className="text-highlight">Experience</span>
+          Nanobubble-Enriched <br />Himalayan Water
+          {/* <span className="text-highlight">Himalayan Water</span> */}
         </h1>
         
         <p className="hero-description">
-          We build high-performance, interactive web experiences that engage your audience and drive growth. Elevate your brand with our cutting-edge solutions.
-        </p>
+            Experience the purity of Himalayan water enhanced with advanced nanobubble technology for a cleaner, fresher, and more refreshing hydration experience.
+         </p>
         
         {/* Buttons using your Master CSS classes */}
         <div className="hero-actions">
