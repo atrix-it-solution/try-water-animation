@@ -1,5 +1,7 @@
 
 
+@import 'bootstrap/dist/css/bootstrap.min.css'; /* Added the @ symbol */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@...");
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap");
 :root {
   /* --- BRAND COLORS --- */
@@ -458,16 +460,16 @@ blockquote {
 /* ========================================================
    4. HERO SECTION (Animations & Cards)
    ======================================================== */
+.hero-dev{
+  overflow: hidden;
+  background-color: var(--bg-section-light);
+}
 .hero-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100vh;
-  min-height: 750px;
-  background-color: var(--bg-hero);
-  padding: 0 13.5%;
-  overflow: hidden;
-  background-color: var(--bg-section-light)
+  flex-wrap: wrap;
+  min-height: 100vh;
 }
 .hero-left {
   width: 45%;
@@ -855,9 +857,6 @@ blockquote {
   justify-content: space-between;
   height: 100%;
 }
-.heading-container {
-  max-width: 1200px;
-}
 .icon_chips_wave {
   font-size: 20px;
   color: var(--primary);
@@ -1133,6 +1132,9 @@ blockquote {
   color: var(--text-dark);
   margin-bottom: 24px;
 }
+.impact-left{
+  padding-top: 50px;
+}
 .impact-left .section_chips.is--blue {
   display: flex;
   align-items: center;
@@ -1145,6 +1147,9 @@ blockquote {
   color: var(--text-dark);
   margin-bottom: 24px;
   max-width: 165px;
+}
+.section_heading {
+    padding-top: 120px;
 }
 .section_heading .section_chips.is--blue {
   display: flex;
@@ -1575,6 +1580,7 @@ blockquote {
 }
 .footer-top {
 
+  padding-top:60px;
   align-items: center;
   text-align: center;
 }

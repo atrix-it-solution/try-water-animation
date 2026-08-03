@@ -20,14 +20,9 @@ export default function ImpactSection() {
       let mm = gsap.matchMedia();
 
       mm.add("(min-width: 768px)", () => {
-        // ❌ Pehle hum timeline ke andar scrollTrigger daal rahe the
-        // ✅ Ab hum Timeline alag banayenge
         const tl = gsap.timeline();
-
-        // 🔥 BULLETPROOF FIX: ScrollTrigger.create() alag se call karein
-        // Vite is function call ko kabhi ignore nahi kar payega!
         ScrollTrigger.create({
-          animation: tl, // Timeline ko yaha attach karein
+          animation: tl, 
           trigger: mainRef.current,
           start: "top top",
           end: "+=1100",
@@ -73,7 +68,8 @@ export default function ImpactSection() {
   return (
     <div ref={mainRef} className="impact-section-wrapper">
       <section className="impact-section">
-        <div className="impact-container">
+        <div className="container">
+           <div className="impact-container ">
           {/* Left Side: Text */}
           <div className="impact-left">
             <div className="section_chips is--blue">
@@ -131,6 +127,8 @@ export default function ImpactSection() {
             </div>
           </div>
         </div>
+        </div>
+       
       </section>
     </div>
   );

@@ -41,7 +41,7 @@ const Navbar = () => {
     <header 
       className={`navbar ${isVisible ? "nav-visible" : "nav-hidden"} ${isScrolled ? "nav-white-bg" : "nav-transparent"}`}
     >
-      <div className="nav-container">
+      <div className=" container">
         
         {/* Left: Logo */}
         <a href="/" className="nav-logo">

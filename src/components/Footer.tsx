@@ -1,4 +1,4 @@
-import  { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import logo from "../../public/images/logo.png";
 import { FaLinkedinIn, FaYoutube, FaInstagram } from "react-icons/fa";
 // import "./Footer.css"
@@ -168,51 +168,48 @@ export default function Footer() {
       <canvas ref={canvasRef} className="footer-bubbles-canvas" />
 
       {/* --- Baki pura code apka same hai --- */}
-     <div className="w-layout-vflex footer-top">
-  <div className="padding_global">
-    <div className="w-layout-vflex container">
-      <div className="w-layout-vflex flex-block-24">
-        <div className="w-layout-vflex flex-block-25">
-          <h2 className="title--l">
-            Experience the Future of Pure Hydration.
-          </h2>
+      <div className="container">
+        <div className="w-layout-vflex footer-top">
+            <div className="w-layout-vflex ">
+              <div className="w-layout-vflex flex-block-24">
+                <div className="w-layout-vflex flex-block-25">
+                  <h2 className="title--l">
+                    Experience the Future of Pure Hydration.
+                  </h2>
 
-          <div className="text--l">
-            Discover cleaner, fresher, and oxygen-rich water powered by advanced Nano Bubble Technology.
-          </div>
+                  <div className="text--l">
+                    Discover cleaner, fresher, and oxygen-rich water powered by advanced Nano Bubble Technology.
+                  </div>
+                </div>
+
+                <div className="w-layout-vflex steps-btns">
+                  <a
+                    data-modal-open=""
+                    data-wf--button--variant="primary-m"
+                    href="/book-a-meeting"
+                    className="button w-inline-block">
+                    <div>Explore Water</div>
+                  </a>
+
+                  <a
+                    data-modal-open=""
+                    data-wf--button--variant="tertiary-m-white"
+                    href="/book-a-meeting"
+                    className="button w-variant-6101740f-88aa-0a0a-23a7-024ce8ee2b35 w-inline-block" >
+                    <div>Contact Us</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+       
         </div>
+        <div className="w-layout-vflex footer-bottom">
 
-        <div className="w-layout-vflex steps-btns">
-          <a
-            data-modal-open=""
-            data-wf--button--variant="primary-m"
-            href="/book-a-meeting"
-            className="button w-inline-block"
-          >
-            <div>Explore Water</div>
-          </a>
-
-          <a
-            data-modal-open=""
-            data-wf--button--variant="tertiary-m-white"
-            href="/book-a-meeting"
-            className="button w-variant-6101740f-88aa-0a0a-23a7-024ce8ee2b35 w-inline-block"
-          >
-            <div>Contact Us</div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-      <div className="w-layout-vflex footer-bottom">
-        <div className="padding_global">
           <div className="w-layout-vflex container">
             <div className="footer_container-grid">
               <div
                 id="w-node-dfeb8a6f-3d27-8a65-53e0-41b223156485-23156472"
-                className="w-layout-vflex footer-logo_wrapp"
-              >
+                className="w-layout-vflex footer-logo_wrapp">
                 <a
                   href="/"
                   aria-current="page"
@@ -223,8 +220,7 @@ export default function Footer() {
                     alt="RYVR logo"
                     src={logo}
                     loading="eager"
-                    className="logo_img"
-                  />
+                    className="logo_img"/>
                 </a>
                 <div className="text--s is--green--200">
                   © 2026 RYVR.ai. All rights reserved
@@ -268,66 +264,67 @@ export default function Footer() {
                   </div>
                 </div>
               </div>
-<div
-  id="w-node-dfeb8a6f-3d27-8a65-53e0-41b22315649d-23156472"
-  className="w-layout-vflex footer_sn-wrapp"
->
-  <div className="footer_sn-list">
+              <div
+                id="w-node-dfeb8a6f-3d27-8a65-53e0-41b22315649d-23156472"
+                className="w-layout-vflex footer_sn-wrapp"
+              >
+                <div className="footer_sn-list">
 
-    {/* LinkedIn */}
-    <a
-      aria-label="LinkedIn"
-      href="https://www.linkedin.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="footer_sn-link w-inline-block"
-    >
-      <div className="footer_sn-icon">
-        <FaLinkedinIn />
-      </div>
-    </a>
+                  {/* LinkedIn */}
+                  <a
+                    aria-label="LinkedIn"
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer_sn-link w-inline-block"
+                  >
+                    <div className="footer_sn-icon">
+                      <FaLinkedinIn />
+                    </div>
+                  </a>
 
-    {/* YouTube */}
-    <a
-      aria-label="YouTube"
-      href="https://www.youtube.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="footer_sn-link w-inline-block"
-    >
-      <div className="footer_sn-icon">
-        <FaYoutube />
-      </div>
-    </a>
+                  {/* YouTube */}
+                  <a
+                    aria-label="YouTube"
+                    href="https://www.youtube.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer_sn-link w-inline-block"
+                  >
+                    <div className="footer_sn-icon">
+                      <FaYoutube />
+                    </div>
+                  </a>
 
-    {/* Instagram */}
-    <a
-      aria-label="Instagram"
-      href="https://www.instagram.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="footer_sn-link w-inline-block"
-    >
-      <div className="footer_sn-icon">
-        <FaInstagram />
-      </div>
-    </a>
+                  {/* Instagram */}
+                  <a
+                    aria-label="Instagram"
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer_sn-link w-inline-block"
+                  >
+                    <div className="footer_sn-icon">
+                      <FaInstagram />
+                    </div>
+                  </a>
 
-  </div>
+                </div>
 
-  <a
-    href="https://apatrixitsolutions.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="footer_link-agency w-inline-block"
-  >
-    <div className="text--s is--medium">Website designed by</div>
-    <b>APATRIX IT SOLUTIONS</b>
-  </a>
-</div>
+                <a
+                  href="https://apatrixitsolutions.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer_link-agency w-inline-block"
+                >
+                  <div className="text--s is--medium">Website designed by</div>
+                  <b>APATRIX IT SOLUTIONS</b>
+                </a>
+              </div>
 
             </div>
           </div>
+
         </div>
       </div>
     </section>

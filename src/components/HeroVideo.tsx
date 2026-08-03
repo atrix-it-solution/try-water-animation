@@ -3,7 +3,7 @@ import video from "../../public/Videos/hero.mp4"
 
 const HeroVideo = () => {
   return (
-    <section className="hero-video-section">
+    <section className="hero-video-section ">
       {/* Dark Overlay taaki text clear dikhe */}
       <div className="video-overlay"></div>
 

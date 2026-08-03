@@ -3,32 +3,29 @@ import React from "react";
 
 const HeroAnimation: React.FC = () => {
   return (
-    <div className="hero-dev">
+    <div className="hero-dev ">
       {/* Left Side: Static Text Context */}
-      <div className="hero-container">
-        <div className="hero-left">
+      <div className="container">
+         <div className="hero-container ">
+      
+        <div className="hero-left ">
           <div className="section_chips is--blue">
             <span className="icon_chips_wave">🫧</span>
             <div>Nano Bubble Water</div>
           </div>
-
-
         <h1>
           Smarter Water.<br />
           <span className="text-green">Better Hydration.</span>
         </h1>
-
         <p>
           Powered by advanced nano bubble technology for cleaner, fresher, and
           naturally oxygen-rich water.
         </p>
-
         <div className="btn-group">
           <button className="btn-primary">Explore Water</button>
           <button className="btn-secondary">Contact Us</button>
         </div>
       </div>
-
       {/* Right Side: Animated Section */}
       <div className="hero-right">
         <div className="animation-wrapper">
@@ -134,7 +131,12 @@ const HeroAnimation: React.FC = () => {
           </div>
         </div>
       </div>
+
       </div>
+
+      </div>
+     
+      
     </div>
   );
 };

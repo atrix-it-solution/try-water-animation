@@ -136,42 +136,42 @@ export const SalesSection: React.FC = () => {
           ))}
         </svg>
 
-  <section className="section sales-section">
+  <section className="section sales-section ">
 
-  <div className="padding_global heading-container">
-    <div className="sales-section_heading">
-      <div className="section_heading">
 
-        {/* <div className="section_chips">
-          <span className="icon_chips_wave">🫧</span>
-          <div>Nano Bubble Technology</div>
-        </div> */}
-        <div className="section_chips is--blue">
+    <div className="container ">
+      <div className="sales-section_heading">
+        <div className="section_heading">
+
+          {/* <div className="section_chips">
             <span className="icon_chips_wave">🫧</span>
             <div>Nano Bubble Technology</div>
+          </div> */}
+          <div className="section_chips is--blue">
+              <span className="icon_chips_wave">🫧</span>
+              <div>Nano Bubble Technology</div>
+            </div>
+
+          <div className="sales-section_title">
+            <h2 className="title--l">
+              <span className="text--grad">Smarter Water.</span> Better Hydration Every Day
+            </h2>
+
+            <div className="sales-section_sub">
+              <p className="text--l">
+                Experience advanced nano bubble technology designed to deliver cleaner, fresher, and oxygen-rich water in every sip.
+              </p>
+            </div>
           </div>
 
-        <div className="sales-section_title">
-          <h2 className="title--l">
-            <span className="text--grad">Smarter Water.</span> Better Hydration Every Day
-          </h2>
-
-          <div className="sales-section_sub">
-            <p className="text--l">
-              Experience advanced nano bubble technology designed to deliver cleaner, fresher, and oxygen-rich water in every sip.
-            </p>
-          </div>
         </div>
-
       </div>
-    </div>
   </div>
 
-  <div className="sales-cards-viewport">
+    <div className="sales-cards-viewport">
     <div
       className="sales-cards_track"
-      ref={trackRef}
-    >
+      ref={trackRef} >
 
       <div className="sales-card" ref={(el) => { cardRefs.current[0] = el; }}>
         <div className="title--s is--green">Step 01</div>
@@ -221,6 +221,9 @@ export const SalesSection: React.FC = () => {
 
     </div>
   </div>
+
+
+
 
 </section>
       </div>
