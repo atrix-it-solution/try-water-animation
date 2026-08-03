@@ -1,15 +1,18 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import "./ImpactSection.css";
-
-gsap.registerPlugin(ScrollTrigger);
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+console.log("GSAP Version:", gsap.version);
+console.log("ScrollTrigger:", ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 export default function ImpactSection() {
   const mainRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    // GSAP Context ensures complete cleanup on unmount/re-render
+
+    
+gsap.registerPlugin(ScrollTrigger);
+
     let ctx = gsap.context(() => {
       let mm = gsap.matchMedia();
 
