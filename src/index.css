@@ -693,13 +693,12 @@ blockquote {
   animation: splitBottomAnim 12s infinite cubic-bezier(0.4, 0, 0.2, 1);
 }
 @keyframes curve4 {
-  0%,
-  5% {
+  0% {
     transform: translate(40px, 220px);
     opacity: 0;
   }
-  15%,
-  32% {
+  10%,
+  33% {
     transform: translate(27px, -180px);
     opacity: 1;
   }
@@ -709,14 +708,14 @@ blockquote {
     opacity: 0;
   }
 }
+
 @keyframes curve3 {
-  0%,
-  5% {
+  0% {
     transform: translate(96px, 340px);
     opacity: 0;
   }
-  15%,
-  32% {
+  10%,
+  33% {
     transform: translate(3px, -60px);
     opacity: 1;
   }
@@ -726,14 +725,14 @@ blockquote {
     opacity: 0;
   }
 }
+
 @keyframes curve2 {
-  0%,
-  5% {
+  0% {
     transform: translate(176px, 460px);
     opacity: 0;
   }
-  15%,
-  32% {
+  10%,
+  33% {
     transform: translate(3px, 60px);
     opacity: 1;
   }
@@ -743,14 +742,14 @@ blockquote {
     opacity: 0;
   }
 }
+
 @keyframes curve1 {
-  0%,
-  5% {
+  0% {
     transform: translate(280px, 580px);
     opacity: 0;
   }
-  15%,
-  32% {
+  10%,
+  33% {
     transform: translate(27px, 180px);
     opacity: 1;
   }
@@ -760,6 +759,7 @@ blockquote {
     opacity: 0;
   }
 }
+
 @keyframes showOne {
   0%,
   36% {
@@ -767,45 +767,45 @@ blockquote {
     transform: scale(0.9) translate(0, 0);
   }
   40%,
-  55% {
+  58% {
     opacity: 1;
     transform: scale(1) translate(0, 0);
   }
-  60%,
+  63%,
   100% {
     opacity: 0;
     transform: scale(1.05) translate(0, 0);
   }
 }
+
 @keyframes splitTopAnim {
   0%,
-  55% {
+  61% {
     opacity: 0;
     transform: translate(0, 0);
   }
-  60%,
-  85% {
+  66%,
+  95% {
     opacity: 1;
     transform: translate(14px, -130px);
   }
-  90%,
   100% {
     opacity: 0;
     transform: translate(75px, -300px);
   }
 }
+
 @keyframes splitBottomAnim {
   0%,
-  55% {
+  61% {
     opacity: 0;
     transform: translate(0, 0);
   }
-  60%,
-  85% {
+  66%,
+  95% {
     opacity: 1;
     transform: translate(14px, 130px);
   }
-  90%,
   100% {
     opacity: 0;
     transform: translate(75px, 300px);
