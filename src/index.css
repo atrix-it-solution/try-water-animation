@@ -158,7 +158,6 @@ blockquote {
   background: linear-gradient(135deg, var(--primary) 0%, #0052cc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 600;
 }
 /* ========================================================
    3. NAVBAR SECTION
@@ -864,7 +863,7 @@ blockquote {
 }
 .title--l {
   font-size: clamp(2.2rem, 4vw, 3.8rem);
-  font-weight: 500;
+  font-weight: 800;
   line-height: 1.12;
   letter-spacing: -0.035em;
   margin: 0 0 1.1rem 0;
@@ -1580,7 +1579,8 @@ blockquote {
 }
 .footer-top {
 
-  padding-top:90px;
+  padding-top:11%;
+  padding-bottom: 10%;
   align-items: center;
   text-align: center;
 }
